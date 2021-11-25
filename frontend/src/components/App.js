@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Dummy from './Dummy';
+import ButtonAppBar from './Login';
+// import {AppBar} from '@mui/material';
 
 /**
  * Simple component with no state.
@@ -9,7 +11,10 @@ import Dummy from './Dummy';
  */
 function App() {
   return (
-    <Dummy />
+    <div>
+      <ButtonAppBar/>
+      <Dummy />
+    </div>
   );
 }
 
