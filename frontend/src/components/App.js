@@ -1,7 +1,9 @@
 import React from 'react';
 
 import Dummy from './Dummy';
-import ButtonAppBar from './Login';
+import LoginScreen from './Login';
+import CategoryScreen from './Category';
+import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
 // import {AppBar} from '@mui/material';
 
 /**
@@ -11,10 +13,24 @@ import ButtonAppBar from './Login';
  */
 function App() {
   return (
-    <div>
-      <ButtonAppBar/>
-      <Dummy />
-    </div>
+    <BrowserRouter>
+        <ul className="navigation">
+          <li><NavLink exact to="/">Home</NavLink></li>
+          <li><NavLink to="/Login">Login</NavLink></li>
+          <li><NavLink to="/Categories">Categories</NavLink></li>
+        </ul>
+      <Switch>
+        <Route path="/" exact>
+          <Dummy/>
+        </Route>
+        <Route path="/Login">
+          <LoginScreen/>
+        </Route>
+        <Route path="/Categories">
+          <CategoryScreen/>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

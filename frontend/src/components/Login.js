@@ -1,9 +1,9 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+// import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-// import Button from '@mui/material/Button';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
@@ -71,7 +71,67 @@ function Login() {
   );
 }
 
-// export default Login;
+/**
+ * Login authentication from authenticated books example
+ *
+ * @return {object} JSX
+ */
+function CreateUser() {
+  const [user, setUser] = React.useState({email: '', password: ''});
+  const history = useHistory();
+
+  const handleInputChange = (event) => {
+    const {value, name} = event.target;
+    const u = user;
+    u[name] = value;
+    setUser(u);
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    fetch('/authenticate', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw res;
+        }
+        return res.json();
+      })
+      .then((json) => {
+        localStorage.setItem('user', JSON.stringify(json));
+        history.push('/');
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('Error logging in, please try again');
+      });
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        onChange={handleInputChange}
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        onChange={handleInputChange}
+        required
+      />
+      <input type="submit" value="Create"/>
+    </form>
+  );
+}
 
 /**
  * Simple appbar with login button
@@ -79,17 +139,23 @@ function Login() {
  *
  * @return {object} JSX
  */
-export default function ButtonAppBar() {
+export default function LoginScreen() {
+  const [newUserShown, setUserShown] = React.useState(false);
+
+  const toggleCreate = () => {
+    setUserShown(!newUserShown);
+  };
+
   return (
     <Box sx={{flexGrow: 1}}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-            Facebook Marketplace
-          </Typography>
-          <Login/>
-        </Toolbar>
-      </AppBar>
+      <Login/>
+      <Button
+        variant="contained"
+        color="success"
+        size="small"
+        onClick={toggleCreate}
+      >New Account</Button>
+      {newUserShown ? <CreateUser/> : <div/>}
     </Box>
   );
 }
