@@ -9,12 +9,13 @@ import Box from '@mui/material/Box';
 
 import {useHistory} from 'react-router-dom';
 
+
 /**
  * Login authentication from authenticated books example
  *
  * @return {object} JSX
  */
-function Login() {
+function CreateUser() {
   const [user, setUser] = React.useState({email: '', password: ''});
   const history = useHistory();
 
@@ -66,7 +67,7 @@ function Login() {
         onChange={handleInputChange}
         required
       />
-      <input type="submit" value="Login"/>
+      <input type="submit" value="Create"/>
     </form>
   );
 }
@@ -77,11 +78,10 @@ function Login() {
  *
  * @return {object} JSX
  */
-export default function LoginScreen() {
+export default function CreateUserScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
-      <Login/>
+      <CreateUser/>
     </Box>
   );
 }
-
