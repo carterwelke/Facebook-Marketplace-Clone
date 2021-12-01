@@ -21,7 +21,7 @@ exports.authenticate = async (req, res) => {
   }
 };
 
-exports.check = (req, res, next) => {
+/* exports.check = (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (authHeader) {
     const token = authHeader.split(' ')[1];
@@ -35,4 +35,4 @@ exports.check = (req, res, next) => {
   } else {
     res.sendStatus(401);
   }
-};
+}; */
