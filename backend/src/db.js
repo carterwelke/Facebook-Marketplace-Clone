@@ -9,11 +9,11 @@ const pool = new Pool({
 });
 
 exports.findUser = async (email, password) => {
-    const select = 'SELECT userInfo FROM account WHERE userInfo->>email = $1 AND account->userInfo->>password = $2';
-    const query = {
-      text: select,
-      values: [email, password],
-    };
-    const {rows} = await pool.query(query);
-    return rows.length == 1 ? rows[0] : undefined;
+  const select = `SELECT userInfo FROM account WHERE (userInfo->>'email' = $1 AND userInfo->>'password' = $2)`;
+  const query = {
+    text: select,
+    values: [email, password],
+  };
+  const {rows} = await pool.query(query);
+  return rows.length == 1 ? rows[0] : undefined;
 };

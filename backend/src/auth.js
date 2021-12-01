@@ -1,18 +1,13 @@
-/*  const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 const db = require('./db');
 
 const secrets = require('./userData/secrets.json');
-let users = require('./userData/users.json');
+// let users = require('./userData/users.json');
 
 exports.authenticate = async (req, res) => {
   const { email, password } = req.body;
-  const test = await db.findUser(email, password);
-  console.log(test);
-  const user = users.find((user) => { 
-    return user.email === email && 
-    password === user.password;
-  });
+  const user = await db.findUser(email, password);
   if (user) {
     const accessToken = jwt.sign(
       {email: user.email, role: user.role}, 
@@ -20,7 +15,7 @@ exports.authenticate = async (req, res) => {
         expiresIn: '30m',
         algorithm: 'HS256'
       });
-    res.status(200).json({name: user.name, accessToken: accessToken});
+    res.status(200).json({name: user.userinfo.name, accessToken: accessToken});
   } else {
     res.status(401).send('Username or password incorrect');
   }
@@ -40,4 +35,4 @@ exports.check = (req, res, next) => {
   } else {
     res.sendStatus(401);
   }
-};*/
+};
