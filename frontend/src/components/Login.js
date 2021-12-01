@@ -41,6 +41,7 @@ function Login() {
         return res.json();
       })
       .then((json) => {
+        console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
       })
@@ -80,6 +81,7 @@ function Login() {
 export default function LoginScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
+      Enter Login
       <Login/>
     </Box>
   );

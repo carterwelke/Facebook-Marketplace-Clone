@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
-import {useHistory} from 'react-router-dom';
+// import {useHistory} from 'react-router-dom';
 
 
 /**
@@ -17,7 +17,7 @@ import {useHistory} from 'react-router-dom';
  */
 function CreateUser() {
   const [user, setUser] = React.useState({email: '', password: ''});
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleInputChange = (event) => {
     const {value, name} = event.target;
@@ -28,7 +28,7 @@ function CreateUser() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    fetch('/authenticate', {
+    /* fetch('/authenticate', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -48,7 +48,7 @@ function CreateUser() {
       .catch((err) => {
         console.log(err);
         alert('Error logging in, please try again');
-      });
+      }); */
   };
 
   return (
@@ -81,6 +81,7 @@ function CreateUser() {
 export default function CreateUserScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
+      Create Account Here
       <CreateUser/>
     </Box>
   );
