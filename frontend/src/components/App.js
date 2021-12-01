@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from './Homepage';
 //  import Login from './Login';
-//  import Dummy from './Dummy';
+import Dummy from './Dummy';
 import LoginScreen from './Login';
 import CreateUserScreen from './CreateUser';
 import CategoryScreen from './Category';
@@ -18,31 +18,6 @@ import {
  */
 function App() {
   return (
-    /*
-    <BrowserRouter>
-      <Dummy />
-      <ul className="navigation">
-        <li><NavLink exact to="/">Home</NavLink></li>
-        <li><NavLink to="/Login">Login</NavLink></li>
-        <li><NavLink to="/CreateUser">Create Account</NavLink></li>
-        <li><NavLink to="/Categories">Categories</NavLink></li>
-      </ul>
-      <Switch>
-        <Route path="/" exact>
-          <Homepage />
-        </Route>
-        <Route path="/Login">
-          <LoginScreen />
-        </Route>
-        <Route path="/CreateUser">
-          <CreateUserScreen />
-        </Route>
-        <Route path="/Categories">
-          <CategoryScreen />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-    */
     <BrowserRouter>
       <Switch>
         <Route path='/home' component={Homepage} />

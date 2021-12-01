@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 // import MenuIcon from '@mui/icons-material/Menu';
 
 // import {useHistory} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 /**
@@ -83,6 +84,7 @@ export default function CreateUserScreen() {
     <Box sx={{flexGrow: 1}}>
       Create Account Here
       <CreateUser/>
+      <NavLink exact to="/login">Back  </NavLink>
     </Box>
   );
 }

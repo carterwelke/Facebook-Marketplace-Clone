@@ -8,6 +8,7 @@ import ListItemText from '@mui/material/ListItemText';
 // import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import {NavLink} from 'react-router-dom';
 
 /**
  * List of categories
@@ -46,6 +47,7 @@ export default function CategoryScreen() {
           </ListItem>
         </List>
       </nav>
+      <NavLink exact to="/home">Back  </NavLink>
     </Box>
   );
 }

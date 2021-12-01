@@ -29,7 +29,7 @@ app.use(
 
 app.get('/v0/dummy', dummy.get);
 // Your routes go here
-app.post('/v0/authenticate', auth.check, user.post);
+app.post('/authenticate', auth.authenticate);
 
 app.use((err, req, res, next) => {
   res.status(err.status).json({
