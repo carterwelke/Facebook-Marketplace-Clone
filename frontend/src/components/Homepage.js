@@ -29,6 +29,14 @@ const useStyles = makeStyles((theme) => ({
  */
 function Homepage() {
   const classes = useStyles();
+  const user = JSON.parse(localStorage.getItem('user'));
+  const [name, setName] = React.useState(user ? user.name : '');
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    setName('');
+  };
+
   return (
     <div>
       <Box className={classes.box}
@@ -52,9 +60,16 @@ function Homepage() {
                 </Typography>
               </Grid>
               <Grid item>
-                <Button variant="contained">
-                  <NavLink to="/Login">Login</NavLink>
-                </Button>
+                {name ? <label>
+                  {name}
+                  <button disabled={!name} onClick={logout}>
+                    Logout
+                  </button>
+                </label> :
+                  <Button variant="contained">
+                    <NavLink to="/Login">Login</NavLink>
+                  </Button>
+                }
               </Grid>
             </Grid>
           </Toolbar>
