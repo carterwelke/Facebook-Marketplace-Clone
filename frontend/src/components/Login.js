@@ -15,7 +15,7 @@ import {useHistory, NavLink} from 'react-router-dom';
  */
 function Login() {
   const [user, setUser] = React.useState({email: '', password: ''});
-  const history = useHistory();
+  //  const history = useHistory();
 
   const handleInputChange = (event) => {
     const {value, name} = event.target;
@@ -23,10 +23,9 @@ function Login() {
     u[name] = value;
     setUser(u);
   };
-
   const onSubmit = (event) => {
     event.preventDefault();
-    fetch('/authenticate', {
+    /*  fetch('/authenticate', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -47,7 +46,7 @@ function Login() {
       .catch((err) => {
         console.log(err);
         alert('Error logging in, please try again');
-      });
+      });*/
   };
 
   return (
@@ -66,7 +65,7 @@ function Login() {
         onChange={handleInputChange}
         required
       />
-      <input type="submit" value="Login"/>
+      <input type="submit" value="Login" />
     </form>
   );
 }
