@@ -7,8 +7,7 @@ import Box from '@mui/material/Box';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
-import {useHistory} from 'react-router-dom';
-
+import {useHistory, NavLink} from 'react-router-dom';
 /**
  * Login authentication from authenticated books example
  *
@@ -81,8 +80,10 @@ function Login() {
 export default function LoginScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
+      <NavLink exact to="/">Back</NavLink>
       Enter Login
       <Login/>
+      <NavLink to="/CreateUser">Create Account</NavLink>
     </Box>
   );
 }

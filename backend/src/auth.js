@@ -1,12 +1,14 @@
 const jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
+const db = require('./db');
 
 const secrets = require('./userData/secrets.json');
 let users = require('./userData/users.json');
 
 exports.authenticate = async (req, res) => {
   const { email, password } = req.body;
-  
+  const test = await db.findUser(email, password);
+  console.log(test);
   const user = users.find((user) => { 
     return user.email === email && 
     password === user.password;

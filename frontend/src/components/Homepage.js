@@ -73,7 +73,9 @@ function Homepage() {
             <Fab variant="extended">Sell</Fab>
           </Grid>
           <Grid item xs="auto">
-            <Fab variant="extended">All Categories</Fab>
+            <Fab variant="extended">
+              <NavLink to="/Categories">All Categories</NavLink>
+            </Fab>
           </Grid>
         </Grid>
       </Box>
