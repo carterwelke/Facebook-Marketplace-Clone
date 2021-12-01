@@ -1,6 +1,6 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 //  import ReactDOM from 'react-dom';
+import {NavLink} from 'react-router-dom';
 import {
   Toolbar, AppBar, Typography,
   Button, Grid, Fab, Box, InputBase,
@@ -52,15 +52,9 @@ function Homepage() {
                 </Typography>
               </Grid>
               <Grid item>
-                <ul className="navigation">
-                  <li><NavLink exact to="/">Home</NavLink></li>
-                  <li><NavLink to="/Login">Login</NavLink></li>
-                  <li><NavLink to="/CreateUser">Create Account</NavLink></li>
-                  <li><NavLink to="/Categories">Categories</NavLink></li>
-                </ul>
-              </Grid>
-              <Grid item>
-                <Button variant="contained">Log In</Button>
+                <Button variant="contained">
+                  <NavLink to="/Login">Login</NavLink>
+                </Button>
               </Grid>
             </Grid>
           </Toolbar>
