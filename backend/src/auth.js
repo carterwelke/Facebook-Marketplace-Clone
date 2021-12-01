@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+/*  const jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 
 const secrets = require('./userData/secrets.json');
@@ -38,4 +38,4 @@ exports.check = (req, res, next) => {
   } else {
     res.sendStatus(401);
   }
-};
+};*/

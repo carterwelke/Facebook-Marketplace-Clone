@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from './Homepage';
 //  import Login from './Login';
-// import Dummy from './Dummy';
+import Dummy from './Dummy';
 import LoginScreen from './Login';
 import CreateUserScreen from './CreateUser';
 import CategoryScreen from './Category';
@@ -17,6 +17,7 @@ import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
+      <Dummy />
       <ul className="navigation">
         <li><NavLink exact to="/">Home</NavLink></li>
         <li><NavLink to="/Login">Login</NavLink></li>
@@ -25,16 +26,16 @@ function App() {
       </ul>
       <Switch>
         <Route path="/" exact>
-          <Homepage/>
+          <Homepage />
         </Route>
         <Route path="/Login">
-          <LoginScreen/>
+          <LoginScreen />
         </Route>
         <Route path="/CreateUser">
-          <CreateUserScreen/>
+          <CreateUserScreen />
         </Route>
         <Route path="/Categories">
-          <CategoryScreen/>
+          <CategoryScreen />
         </Route>
       </Switch>
     </BrowserRouter>

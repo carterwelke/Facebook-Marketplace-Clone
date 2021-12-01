@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
-import {useHistory} from 'react-router-dom';
+//  import {useHistory} from 'react-router-dom';
 
 /**
  * Login authentication from authenticated books example
@@ -16,7 +16,7 @@ import {useHistory} from 'react-router-dom';
  */
 function Login() {
   const [user, setUser] = React.useState({email: '', password: ''});
-  const history = useHistory();
+  //  const history = useHistory();
 
   const handleInputChange = (event) => {
     const {value, name} = event.target;
@@ -24,10 +24,9 @@ function Login() {
     u[name] = value;
     setUser(u);
   };
-
   const onSubmit = (event) => {
     event.preventDefault();
-    fetch('/authenticate', {
+    /*  fetch('/authenticate', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -48,7 +47,7 @@ function Login() {
       .catch((err) => {
         console.log(err);
         alert('Error logging in, please try again');
-      });
+      });*/
   };
 
   return (
@@ -67,7 +66,7 @@ function Login() {
         onChange={handleInputChange}
         required
       />
-      <input type="submit" value="Login"/>
+      <input type="submit" value="Login" />
     </form>
   );
 }
@@ -82,7 +81,7 @@ export default function LoginScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
       Enter Login
-      <Login/>
+      <Login />
     </Box>
   );
 }
