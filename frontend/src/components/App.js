@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from './Homepage';
 //  import Login from './Login';
-import Dummy from './Dummy';
+// import Dummy from './Dummy';
 import LoginScreen from './Login';
 import CreateUserScreen from './CreateUser';
 import CategoryScreen from './Category';
