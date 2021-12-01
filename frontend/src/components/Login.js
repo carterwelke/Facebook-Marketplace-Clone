@@ -82,7 +82,7 @@ export default function LoginScreen() {
       <NavLink exact to="/">Back</NavLink>
       Enter Login
       <Login/>
-      <NavLink to="/CreateUser">Create Account</NavLink>
+      <NavLink to="/new-user">Create Account</NavLink>
     </Box>
   );
 }
