@@ -1,13 +1,18 @@
-import {render, fireEvent} from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import {
+  render, fireEvent, screen, waitFor,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import {screen, waitFor} from '@testing-library/react';
-import {rest} from 'msw';
-import {setupServer} from 'msw/node';
+import {
+  rest,
+} from 'msw';
+import {
+  setupServer,
+} from 'msw/node';
 
 // import LoginScreen from '../Login';
 import App from '../App';
-import { request } from '../../../../backend/src/app';
+//  import {request} from '../../../../backend/src/app';
 
 const URL = '/authenticate';
 
@@ -17,7 +22,8 @@ const server = setupServer(
     const { email, password } = req.body;
     if(email === 'molly@books.com'){
         console.log('no error');
-        return res(ctx.json({name: 'Molly Member', accessToken: 'testingAccessToken'}));
+        return res(ctx.json({name: 'Molly Member',
+        accessToken: 'testingAccessToken'}));
     }
     console.log('returning 401 error');
     return res(ctx.status(401)); */
@@ -25,7 +31,8 @@ const server = setupServer(
 );
 
 // return res(ctx.status(401));
-// return res(ctx.json({name: 'Molly Member', accessToken: 'testingAccessToken'}));
+// return res(ctx.json({name: 'Molly Member',
+//  accessToken: 'testingAccessToken'}));
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
@@ -44,37 +51,40 @@ test('click Login', async () => {
 
 /**
  */
- test('test login', async () => {
-    server.use(
-        rest.post(URL, (req, res, ctx) => {
-          console.log('returning success');
-          return res(ctx.json({name: 'Molly Member', accessToken: 'testingAccessToken'}));
-        }),
-      )
-    render(<App />);
-    fireEvent.click(screen.getByText('Sign In'));
-    userEvent.type(screen.getByPlaceholderText('Email'), 'molly@books.com');
-    userEvent.type(screen.getByPlaceholderText('Password'), 'mollymember');
-    userEvent.click(screen.getByText('Login'));
-    await waitFor(() => screen.getByText('Molly Member'));
-    userEvent.click(screen.getByText('Logout'));
-  });
+test('login', async () => {
+  server.use(
+    rest.post(URL, (req, res, ctx) => {
+      console.log('returning success');
+      return res(ctx.json({
+        name: 'Molly Member',
+        accessToken: 'testingAccessToken',
+      }));
+    }),
+  );
+  render(<App />);
+  fireEvent.click(screen.getByText('Sign In'));
+  userEvent.type(screen.getByPlaceholderText('Email'), 'molly@books.com');
+  userEvent.type(screen.getByPlaceholderText('Password'), 'mollymember');
+  userEvent.click(screen.getByText('Login'));
+  await waitFor(() => screen.getByText('Molly Member'));
+  userEvent.click(screen.getByText('Logout'));
+});
 
-  /**
+/**
  */
-   test('test wrong login', async () => {
-    server.use(
-      rest.post(URL, (req, res, ctx) => {
-        console.log('returning 401 error');
-        return res(ctx.status(401));
-      }),
-    )
-    render(<App />);
-    fireEvent.click(screen.getByText('Sign In'));
-    userEvent.type(screen.getByPlaceholderText('Email'), 'wrong@email');
-    userEvent.type(screen.getByPlaceholderText('Password'), 'wrongPassword');
-    userEvent.click(screen.getByText('Login'));
-    await waitFor(() => screen.getByText('Sign in here'));
+test('wrong login', async () => {
+  server.use(
+    rest.post(URL, (req, res, ctx) => {
+      console.log('returning 401 error');
+      return res(ctx.status(401));
+    }),
+  );
+  render(<App />);
+  fireEvent.click(screen.getByText('Sign In'));
+  userEvent.type(screen.getByPlaceholderText('Email'), 'wrong@email');
+  userEvent.type(screen.getByPlaceholderText('Password'), 'wrongPassword');
+  userEvent.click(screen.getByText('Login'));
+  await waitFor(() => screen.getByText('Sign in here'));
 });
 
 /**
