@@ -39,11 +39,11 @@ function Login() {
         return res.json();
       })
       .then((json) => {
-        console.log(json);
+        // console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
-      })
-      /*  .catch((err) => {
+      });
+    /*  .catch((err) => {
         //  console.log(err);
         //  alert('Error logging in, please try again');
       });*/

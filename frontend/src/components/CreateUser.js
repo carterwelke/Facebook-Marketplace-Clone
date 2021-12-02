@@ -50,11 +50,11 @@ function CreateUser() {
       .catch((err) => {
         console.log(err);
         alert('Error signing up, please try again');
-      }); 
+      });
   }; */
 
   return (
-    <form /*onSubmit={onSubmit}*/>
+    <form /* onSubmit={onSubmit}*/>
       <input
         type="email"
         name="email"
