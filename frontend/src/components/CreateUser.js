@@ -28,8 +28,8 @@ function CreateUser() {
   };
 
   const onSubmit = (event) => {
-    event.preventDefault();
-    /* fetch('/authenticate', {
+    /* event.preventDefault();
+    fetch('/createUser', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -43,12 +43,13 @@ function CreateUser() {
         return res.json();
       })
       .then((json) => {
+        console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
       })
       .catch((err) => {
         console.log(err);
-        alert('Error logging in, please try again');
+        alert('Error signing up, please try again');
       }); */
   };
 

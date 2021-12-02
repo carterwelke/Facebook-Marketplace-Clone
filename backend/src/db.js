@@ -8,11 +8,11 @@ const pool = new Pool({
   password: process.env.POSTGRES_PASSWORD,
 });
 
-exports.findUser = async (email, password) => {
-  const select = `SELECT userInfo FROM account WHERE (userInfo->>'email' = $1 AND userInfo->>'password' = $2)`;
+exports.findUser = async (email) => {
+  const select = `SELECT userInfo FROM account WHERE (userInfo->>'email' = $1)`;
   const query = {
     text: select,
-    values: [email, password],
+    values: [email],
   };
   const {rows} = await pool.query(query);
   return rows.length == 1 ? rows[0] : undefined;

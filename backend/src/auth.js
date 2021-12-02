@@ -7,8 +7,8 @@ const secrets = require('./userData/secrets.json');
 
 exports.authenticate = async (req, res) => {
   const { email, password } = req.body;
-  const user = await db.findUser(email, password);
-  if (user) {
+  const user = await db.findUser(email);
+  if (user && bcrypt.compareSync(password, user.userinfo.password)) {
     const accessToken = jwt.sign(
       {email: user.email, role: user.role}, 
       secrets.accessToken, {
@@ -20,6 +20,12 @@ exports.authenticate = async (req, res) => {
     res.status(401).send('Username or password incorrect');
   }
 };
+
+/* exports.createUser = async (req, res) => {
+  console.log("test");
+
+  res.status(404).send('TESTING');
+} */
 
 /*exports.check = (req, res, next) => {
   const authHeader = req.headers.authorization;

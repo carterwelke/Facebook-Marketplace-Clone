@@ -60,14 +60,17 @@ function Homepage() {
                 </Typography>
               </Grid>
               <Grid item>
-                {name ? <label>
-                  {name}
-                  <button disabled={!name} onClick={logout}>
-                    Logout
-                  </button>
-                </label> :
+                {name ?
+                  <div>
+                    <label>
+                      {name}
+                    </label>
+                    <button disabled={!name} onClick={logout}>
+                      Logout
+                    </button>
+                  </div> :
                   <Button variant="contained">
-                    <NavLink to="/Login">Login</NavLink>
+                    <NavLink to="/Login">Sign In</NavLink>
                   </Button>
                 }
               </Grid>

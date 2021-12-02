@@ -79,8 +79,8 @@ function Login() {
 export default function LoginScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
-      <NavLink exact to="/home">Back  </NavLink>
-      Enter Login
+      <div><NavLink exact to="/home">Back  </NavLink></div>
+      Sign in here
       <Login/>
       <NavLink to="/new-user">Create Account</NavLink>
     </Box>

@@ -25,7 +25,7 @@ test('GET Invalid URL', async () => {
 test('test Molly login', async () => {
   await request.post('/authenticate')
     .send({email:"molly@books.com",
-        password:"$2b$10$Y00XOZD/f5gBSpDusPUgU.iJufk6Nxx6gAoHRG8t2eHyGgoP2bK4y"})
+        password:"mollymember"})
     .expect(200)
     .expect('Content-Type', /json/)
     .then((res) => {
