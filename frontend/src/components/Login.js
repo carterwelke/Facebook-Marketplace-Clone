@@ -33,9 +33,9 @@ function Login() {
       },
     })
       .then((res) => {
-        if (!res.ok) {
+        /*  if (!res.ok) {
           throw res;
-        }
+        }*/
         return res.json();
       })
       .then((json) => {
@@ -43,10 +43,10 @@ function Login() {
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
       })
-      .catch((err) => {
-        console.log(err);
-        alert('Error logging in, please try again');
-      });
+      /*  .catch((err) => {
+        //  console.log(err);
+        //  alert('Error logging in, please try again');
+      });*/
   };
 
   return (
