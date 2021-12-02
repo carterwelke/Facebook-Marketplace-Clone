@@ -17,10 +17,10 @@ import {NavLink} from 'react-router-dom';
  * @return {object} JSX
  */
 function CreateUser() {
-  const [user, setUser] = React.useState({email: '', password: ''});
+  // const [user, setUser] = React.useState({email: '', password: ''});
   // const history = useHistory();
 
-  const handleInputChange = (event) => {
+  /* const handleInputChange = (event) => {
     const {value, name} = event.target;
     const u = user;
     u[name] = value;
@@ -50,23 +50,23 @@ function CreateUser() {
       .catch((err) => {
         console.log(err);
         alert('Error signing up, please try again');
-      }); */
-  };
+      }); 
+  }; */
 
   return (
-    <form onSubmit={onSubmit}>
+    <form /*onSubmit={onSubmit}*/>
       <input
         type="email"
         name="email"
         placeholder="Email"
-        onChange={handleInputChange}
+        // onChange={handleInputChange}
         required
       />
       <input
         type="password"
         name="password"
         placeholder="Password"
-        onChange={handleInputChange}
+        // onChange={handleInputChange}
         required
       />
       <input type="submit" value="Create"/>

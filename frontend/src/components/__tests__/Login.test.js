@@ -18,15 +18,14 @@ const URL = '/authenticate';
 
 const server = setupServer(
   rest.post(URL, (req, res, ctx) => {
-    /* //console.log(req.body);
+    //console.log(req.body);
     const { email, password } = req.body;
     if(email === 'molly@books.com'){
         console.log('no error');
-        return res(ctx.json({name: 'Molly Member',
-        accessToken: 'testingAccessToken'}));
+        return res(ctx.json({name: 'Molly Member', accessToken: 'testingAccessToken'}));
     }
     console.log('returning 401 error');
-    return res(ctx.status(401)); */
+    return res(ctx.status(401));
   }),
 );
 
@@ -52,15 +51,14 @@ test('click Login', async () => {
 /**
  */
 test('login', async () => {
-  server.use(
+  /* server.use(
     rest.post(URL, (req, res, ctx) => {
       console.log('returning success');
       return res(ctx.json({
-        name: 'Molly Member',
-        accessToken: 'testingAccessToken',
+        name: 'Molly Member', accessToken: 'testingAccessToken',
       }));
     }),
-  );
+  );*/
   render(<App />);
   fireEvent.click(screen.getByText('Sign In'));
   userEvent.type(screen.getByPlaceholderText('Email'), 'molly@books.com');
@@ -73,12 +71,12 @@ test('login', async () => {
 /**
  */
 test('wrong login', async () => {
-  server.use(
+  /*server.use(
     rest.post(URL, (req, res, ctx) => {
       console.log('returning 401 error');
       return res(ctx.status(401));
     }),
-  );
+  ); */
   render(<App />);
   fireEvent.click(screen.getByText('Sign In'));
   userEvent.type(screen.getByPlaceholderText('Email'), 'wrong@email');
