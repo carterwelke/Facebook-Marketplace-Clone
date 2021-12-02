@@ -7,7 +7,9 @@ import Box from '@mui/material/Box';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
-import {useHistory, NavLink} from 'react-router-dom';
+import {
+  useHistory, NavLink,
+} from 'react-router-dom';
 /**
  * Login authentication from authenticated books example
  *
@@ -39,14 +41,14 @@ function Login() {
         return res.json();
       })
       .then((json) => {
-        // console.log(json);
+        console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
       });
     /*  .catch((err) => {
-        //  console.log(err);
-        //  alert('Error logging in, please try again');
-      });*/
+      //  console.log(err);
+      //  alert('Error logging in, please try again');
+    });*/
   };
 
   return (
@@ -81,7 +83,7 @@ export default function LoginScreen() {
     <Box sx={{flexGrow: 1}}>
       <div><NavLink exact to="/home">Back  </NavLink></div>
       Sign in here
-      <Login/>
+      <Login />
       <NavLink to="/new-user">Create Account</NavLink>
     </Box>
   );

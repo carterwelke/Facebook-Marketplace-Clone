@@ -5,6 +5,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Dummy from './Dummy';
 // import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
@@ -48,6 +49,7 @@ export default function CategoryScreen() {
         </List>
       </nav>
       <NavLink exact to="/home">Back  </NavLink>
+      <Dummy />
     </Box>
   );
 }

@@ -19,13 +19,12 @@ const URL = '/authenticate';
 const server = setupServer(
   rest.post(URL, (req, res, ctx) => {
     // console.log(req.body);
-    const {email, password} = req.body;
-    if (email === 'molly@books.com' && password === 'mollymember') {
-      // console.log('no error');
-      return res(ctx.json({name: 'Molly Member',
-        accessToken: 'testingAccessToken'}));
+    const {email} = req.body;
+    if (email === 'molly@books.com') {
+      console.log('no error');
+      return res(ctx.json({name: 'Molly Member'}));
     }
-    // console.log('returning 401 error');
+    console.log('returning 401 error');
     return res(ctx.status(401));
   }),
 );

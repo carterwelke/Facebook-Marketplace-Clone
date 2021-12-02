@@ -1,6 +1,9 @@
 import React from 'react';
 //  import ReactDOM from 'react-dom';
-import {NavLink} from 'react-router-dom';
+import Dummy from './Dummy';
+import {
+  NavLink,
+} from 'react-router-dom';
 import {
   Toolbar, AppBar, Typography,
   Button, Grid, Fab, Box, InputBase,
@@ -115,6 +118,9 @@ function Homepage() {
               <SearchIcon />
               <InputBase placeholder=" Search" />
             </div>
+          </Grid>
+          <Grid item>
+            <Dummy />
           </Grid>
         </Grid>
       </Box>
