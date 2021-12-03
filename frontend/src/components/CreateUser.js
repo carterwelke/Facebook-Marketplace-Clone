@@ -29,7 +29,6 @@ function CreateUser() {
   };
 
   const onSubmit = (event) => {
-    console.log('here?');
     event.preventDefault();
     fetch('/createUser', {
       method: 'POST',

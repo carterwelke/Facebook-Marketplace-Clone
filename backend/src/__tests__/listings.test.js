@@ -27,9 +27,9 @@ test('test get all listings', async () => {
       .expect(200)
       .expect('Content-Type', /json/)
       .then((res) => {
-        console.log(res.body);
+        // console.log(res.body[0]);
         expect(res).toBeDefined();
         expect(res.body).toBeDefined();
-        // expect(res.body.name).toBe("Molly Member");
+        expect(res.body[0].imageinfo.description).toBe("BMW 435i Good Condition Used");
       });
   });
