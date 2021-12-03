@@ -7,8 +7,9 @@ import Box from '@mui/material/Box';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
-import {useHistory} from 'react-router-dom';
-import {NavLink} from 'react-router-dom';
+import {
+  useHistory, NavLink,
+} from 'react-router-dom';
 
 
 /**
@@ -42,15 +43,21 @@ function CreateUser() {
         return res.json();
       })
       .then((json) => {
+<<<<<<< Updated upstream
         // console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
+=======
+        console.log(json);
+        history.push('/login');
+>>>>>>> Stashed changes
       })
   };
 
   return (
     <form onSubmit={onSubmit}>
       <input
+        id="namecr"
         type="text"
         name="name"
         placeholder="Name"
@@ -58,6 +65,7 @@ function CreateUser() {
         required
       />
       <input
+        id="emailcr"
         type="email"
         name="email"
         placeholder="Email"
@@ -65,13 +73,16 @@ function CreateUser() {
         required
       />
       <input
+        id="passwordcr"
         type="password"
         name="password"
         placeholder="Password"
         onChange={handleInputChange}
         required
       />
-      <input type="submit" value="Create"/>
+      <input type="submit"
+        aria-label='createz account'
+        value="Create" />
     </form>
   );
 }
@@ -86,8 +97,10 @@ export default function CreateUserScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
       Create Account Here
-      <CreateUser/>
-      <NavLink exact to="/login">Back  </NavLink>
+      <CreateUser />
+      <NavLink
+        aria-label='create account'
+        exact to="/login">Back  </NavLink>
     </Box>
   );
 }

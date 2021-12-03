@@ -54,6 +54,7 @@ function Login() {
   return (
     <form onSubmit={onSubmit} aria-label='login page'>
       <input
+        id="email"
         type="email"
         name="email"
         placeholder="Email"
@@ -61,13 +62,14 @@ function Login() {
         required
       />
       <input
+        id="password"
         type="password"
         name="password"
         placeholder="Password"
         onChange={handleInputChange}
         required
       />
-      <input type="submit" value="Login" />
+      <input type="submit" aria-label='loginz page' value="Login" />
     </form>
   );
 }

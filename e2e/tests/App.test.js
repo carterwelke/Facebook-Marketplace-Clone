@@ -61,6 +61,48 @@ test('Go to Login', async () => {
   expect(cont).toBe('Sign in here');
 });
 
+test('Go to Category', async () => {
+  await page.goto('http://localhost:3000/');
+  let label = await page.$('aria/category button');
+  let cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('All Categories');
+  await page.click('aria/category button');
+});
 
+test('Login test', async () => {
+  await page.goto('http://localhost:3000/');
+  let label = await page.$('aria/login button');
+  let cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('Sign In');
+  await page.click('aria/login button');
+  await page.waitForSelector('#email');
+  await page.type('#email', 'molly@books.com');
+  await page.waitForSelector('#password');
+  await page.type('#password', 'mollymember');
+  label = await page.$('aria/loginz page');
+  await page.click('aria/loginz page');
+  label = await page.$('aria/logout button');
+  await page.click(screen.getByText('aria/logout button'));
+});
+
+test('Create Account test', async () => {
+  await page.goto('http://localhost:3000/');
+  let label = await page.$('aria/login button');
+  let cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('Sign In');
+  await page.click('aria/login button');
+  label = await page.$('aria/create account');
+  await page.click('aria/create account');
+  await page.waitForSelector('#namecr');
+  await page.type('#namecr', 'Madara');
+  await page.waitForSelector('#emailcr');
+  await page.type('#emailcr', 'madara@uchiha.com');
+  await page.waitForSelector('#passwordcr');
+  await page.type('#passwordcr', 'Tobi');
+  label = await page.$('aria/createz account');
+  await page.click('aria/createz account');
+  label = await page.$('aria/logout button');
+  await page.click(screen.getByText('aria/logout button'));
+});
 
 

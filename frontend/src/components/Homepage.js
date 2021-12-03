@@ -67,7 +67,8 @@ function Homepage() {
                     <label>
                       {name}
                     </label>
-                    <button disabled={!name} onClick={logout}>
+                    <button aria-label='logout button'
+                      disabled={!name} onClick={logout}>
                       Logout
                     </button>
                   </div> :
@@ -75,7 +76,7 @@ function Homepage() {
                     <NavLink
                       aria-label='login button'
                       to="/Login">
-                        Sign In
+                      Sign In
                     </NavLink>
                   </Button>
                 }
@@ -98,7 +99,9 @@ function Homepage() {
           </Grid>
           <Grid item xs="auto">
             <Fab variant="extended">
-              <NavLink to="/Categories">All Categories</NavLink>
+              <NavLink
+                aria-label='category button'
+                to="/Categories">All Categories</NavLink>
             </Fab>
           </Grid>
         </Grid>
