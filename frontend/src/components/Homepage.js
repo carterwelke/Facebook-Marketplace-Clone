@@ -188,7 +188,12 @@ function Homepage() {
                 <thead>
                   {listings.map((listItem) => (
                     <tr key={listItem.imageinfo.imageUrl}>
-                      <td>{listItem.imageinfo.imageUrl}</td>
+                      <td>
+                        <img
+                          src={listItem.imageinfo.imageUrl}
+                          alt={listItem.imageinfo.description}
+                        />
+                      </td>
                       <td>{listItem.imageinfo.description}</td>
                     </tr>
                   ))}
