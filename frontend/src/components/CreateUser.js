@@ -28,6 +28,7 @@ function CreateUser() {
   };
 
   const onSubmit = (event) => {
+    console.log("here?");
     event.preventDefault();
     fetch('/createUser', {
       method: 'POST',
@@ -37,20 +38,14 @@ function CreateUser() {
       },
     })
       .then((res) => {
-        if (!res.ok) {
-          throw res;
-        }
+        // console.log("how about here?");
         return res.json();
       })
       .then((json) => {
-        console.log(json);
+        // console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
-        history.push('/login');
+        history.push('/');
       })
-      .catch((err) => {
-        console.log(err);
-        alert('Error signing up, please try again');
-      });
   };
 
   return (

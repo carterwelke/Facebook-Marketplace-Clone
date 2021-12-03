@@ -15,14 +15,13 @@ exports.findUser = async (email) => {
     values: [email],
   };
   const {rows} = await pool.query(query);
-  console.log(rows[0]);
+  // console.log(rows[0]);
   return rows.length == 1 ? rows[0] : undefined;
 };
 
 // INSERT INTO account (userInfo) VALUES ('{"email": $1,"password": $2, "name": $3}');
 
 exports.addUser = async (newName, newEmail, newPassword) => {
-  
   const newUser = {
     email: newEmail,
     password: newPassword,
@@ -35,6 +34,6 @@ exports.addUser = async (newName, newEmail, newPassword) => {
   };
   const {rows} = await pool.query(query);
   // console.log("here?");
-  console.log(rows[0]);
+  // console.log(rows[0]);
   return newUser;
 };

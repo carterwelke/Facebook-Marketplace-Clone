@@ -21,10 +21,10 @@ const server = setupServer(
     // console.log(req.body);
     const {email} = req.body;
     if (email === 'molly@books.com') {
-      console.log('no error');
+      // console.log('no error');
       return res(ctx.json({name: 'Molly Member'}));
     }
-    console.log('returning 401 error');
+    // console.log('returning 401 error');
     return res(ctx.status(401));
   }),
 );

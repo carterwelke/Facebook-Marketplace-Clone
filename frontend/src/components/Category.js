@@ -30,7 +30,7 @@ export default function CategoryScreen() {
   return (
     <Box sx={{width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}>
       <nav aria-label="main mailbox folders">
-      <NavLink exact to="/home">Back  </NavLink>
+        <NavLink exact to="/home">Back  </NavLink>
         <List>
           <ListItem disablePadding>
             <ListItemButton>

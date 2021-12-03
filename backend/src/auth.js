@@ -25,10 +25,10 @@ exports.authenticate = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   const { name, email, password } = req.body;
-  console.log("Create user: ", name, email, password);
+  // console.log("Create user: ", name, email, password);
   const hash = await bcrypt.hashSync(password, saltRounds);
   const newUser = await db.addUser(name, email, hash);
-  console.log(newUser);
+  // console.log(newUser);
   res.status(201).send(newUser);
 }
 
