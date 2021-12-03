@@ -81,8 +81,8 @@ function Login() {
 export default function LoginScreen() {
   return (
     <Box sx={{flexGrow: 1}}>
-      <div><NavLink exact to="/home">Back  </NavLink></div>
-      Sign in here
+      <div><NavLink exact to="/home">Back</NavLink></div>
+      <div aria-label='login page'>Sign in here</div>
       <Login />
       <NavLink to="/new-user">Create Account</NavLink>
     </Box>

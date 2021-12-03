@@ -51,7 +51,7 @@ afterEach(async () => {
 });
 
 // Clicks the 'Get Dummy' button and checks the server response is displayed.
-test('Go to Login', async () => {
+test('Get Dummy', async () => {
   await page.goto('http://localhost:3000/');
   const label = await page.$('aria/dummy message');
   let cont = await (await label.getProperty('textContent')).jsonValue();
@@ -63,4 +63,22 @@ test('Go to Login', async () => {
   cont = await (await label.getProperty('textContent')).jsonValue();
   expect(cont.search(/Hello CSE183/)).toEqual(0);
   expect(cont.search(/Database created/)).toBeGreaterThan(60);
+});
+
+// Clicks the 'Get Dummy' button and checks the server response is displayed.
+test('Go to Login', async () => {
+  await page.goto('http://localhost:3000/');
+  let label = await page.$('aria/login button');
+  let cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('Sign In');
+  await page.click('aria/login button');
+  /* await page.waitForFunction(
+    'document.querySelector("div").innerText.includes("Sign in here")',
+  ); */
+  label = await page.$('aria/login page');
+  cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('Sign in here');
+  // cont = await (await label.getProperty('textContent')).jsonValue();
+  // expect(cont.search(/Hello CSE183/)).toEqual(0);
+  // expect(cont.search(/Database created/)).toBeGreaterThan(60);
 });

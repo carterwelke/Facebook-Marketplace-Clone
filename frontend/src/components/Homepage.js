@@ -73,7 +73,11 @@ function Homepage() {
                     </button>
                   </div> :
                   <Button variant="contained">
-                    <NavLink to="/Login">Sign In</NavLink>
+                    <NavLink
+                      aria-label='login button'
+                      to="/Login">
+                        Sign In
+                    </NavLink>
                   </Button>
                 }
               </Grid>
