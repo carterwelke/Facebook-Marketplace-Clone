@@ -44,6 +44,6 @@ exports.getAllListings = async () => {
     text: select,
   };
   const {rows} = await pool.query(query);
-  console.log(rows);
+  // console.log(rows);
   return rows;
 }

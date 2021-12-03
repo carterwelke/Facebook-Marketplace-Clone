@@ -25,18 +25,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const fetchListings = (setListings, setError) => {
-  const item = localStorage.getItem('user');
+  /* const item = localStorage.getItem('user');
   if (!item) {
     return;
   }
   const user = JSON.parse(item);
   const bearerToken = user ? user.accessToken : '';
+  */
   fetch('/getAllListings', {
     method: 'get',
-    headers: new Headers({
+    /* headers: new Headers({
       'Authorization': `Bearer ${bearerToken}`,
       'Content-Type': 'application/x-www-form-urlencoded',
-    }),
+    }),*/
   })
     .then((response) => {
       if (!response.ok) {
@@ -46,6 +47,7 @@ const fetchListings = (setListings, setError) => {
     })
     .then((json) => {
       setError('');
+      // console.log(json);
       setListings(json);
     })
     .catch((error) => {
@@ -70,17 +72,15 @@ function Homepage() {
 
   const logout = () => {
     localStorage.removeItem('user');
-    setListings([]);
     setName('');
     setError('Logged Out');
+    console.log(error);
   };
 
   React.useEffect(() => {
     fetchListings(setListings, setError);
   }, []);
 
-  // console.log(listings);
-  // console.log(error);
 
   return (
     <div>
@@ -177,8 +177,13 @@ function Homepage() {
               border: 1,
               borderRadius: '8px',
             }}>
-            <div>{listings}</div>
-            <div>{error}</div>
+            <div>
+              {listings.map((listItem) => (
+                <tr >
+                  <td>{listItem.imageinfo.imageUrl}</td>
+                  <td>{listItem.imageinfo.description}</td>
+                </tr>
+              ))} </div>
           </Grid>
         </Grid>
       </Box>
