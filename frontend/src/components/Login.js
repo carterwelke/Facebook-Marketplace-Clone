@@ -41,7 +41,7 @@ function Login() {
         return res.json();
       })
       .then((json) => {
-        //console.log(json);
+        // console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
       });
@@ -86,7 +86,9 @@ export default function LoginScreen() {
       <div><NavLink exact to="/home">Back</NavLink></div>
       <div aria-label='login page'>Sign in here</div>
       <Login />
-      <NavLink to="/new-user">Create Account</NavLink>
+      <NavLink
+        aria-label='create account'
+        to="/new-user">Create Account</NavLink>
     </Box>
   );
 }

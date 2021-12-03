@@ -67,9 +67,11 @@ function Homepage() {
                     <label>
                       {name}
                     </label>
-                    <button aria-label='logout button'
-                      disabled={!name} onClick={logout}>
-                      Logout
+                    <button
+                      disabled={!name}
+                      onClick={logout}
+                      aria-label='logout button'>
+                        Logout
                     </button>
                   </div> :
                   <Button variant="contained">

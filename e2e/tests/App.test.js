@@ -81,8 +81,6 @@ test('Login test', async () => {
   await page.type('#password', 'mollymember');
   label = await page.$('aria/loginz page');
   await page.click('aria/loginz page');
-  label = await page.$('aria/logout button');
-  await page.click(screen.getByText('aria/logout button'));
 });
 
 test('Create Account test', async () => {
@@ -101,8 +99,6 @@ test('Create Account test', async () => {
   await page.type('#passwordcr', 'Tobi');
   label = await page.$('aria/createz account');
   await page.click('aria/createz account');
-  label = await page.$('aria/logout button');
-  await page.click(screen.getByText('aria/logout button'));
 });
 
 

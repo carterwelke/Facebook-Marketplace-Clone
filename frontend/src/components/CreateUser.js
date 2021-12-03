@@ -29,7 +29,7 @@ function CreateUser() {
   };
 
   const onSubmit = (event) => {
-    console.log("here?");
+    console.log('here?');
     event.preventDefault();
     fetch('/createUser', {
       method: 'POST',
@@ -43,15 +43,10 @@ function CreateUser() {
         return res.json();
       })
       .then((json) => {
-<<<<<<< Updated upstream
         // console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
         history.push('/');
-=======
-        console.log(json);
-        history.push('/login');
->>>>>>> Stashed changes
-      })
+      });
   };
 
   return (
@@ -99,7 +94,6 @@ export default function CreateUserScreen() {
       Create Account Here
       <CreateUser />
       <NavLink
-        aria-label='create account'
         exact to="/login">Back  </NavLink>
     </Box>
   );

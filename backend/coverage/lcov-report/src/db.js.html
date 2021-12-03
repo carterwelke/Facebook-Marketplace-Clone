@@ -23,13 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-<<<<<<< Updated upstream
                 <span class='fraction'>13/13</span>
-=======
-                <span class='fraction'>9/15</span>
->>>>>>> Stashed changes
             </div>
         
             
@@ -41,24 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-<<<<<<< Updated upstream
                 <span class='fraction'>2/2</span>
-=======
-                <span class='fraction'>1/2</span>
->>>>>>> Stashed changes
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-<<<<<<< Updated upstream
                 <span class='fraction'>13/13</span>
-=======
-                <span class='fraction'>9/15</span>
->>>>>>> Stashed changes
             </div>
         
             
@@ -67,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,7 +95,6 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<<<<<<< Updated upstream
 <a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -123,10 +110,6 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-=======
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
->>>>>>> Stashed changes
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,38 +127,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<<<<<<< Updated upstream
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-=======
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
->>>>>>> Stashed changes
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const {Pool} = require('pg');
 &nbsp;
 const pool = new Pool({
@@ -193,29 +150,18 @@ exports.findUser = async (email) =&gt; {
     values: [email],
   };
   const {rows} = await pool.query(query);
-<<<<<<< Updated upstream
   // console.log(rows[0]);
-=======
-  console.log(rows[0]);
->>>>>>> Stashed changes
   return rows.length == 1 ? rows[0] : undefined;
 };
 &nbsp;
 // INSERT INTO account (userInfo) VALUES ('{"email": $1,"password": $2, "name": $3}');
 &nbsp;
-<<<<<<< Updated upstream
 exports.addUser = async (newName, newEmail, newPassword) =&gt; {
   const newUser = {
-=======
-exports.addUser = <span class="fstat-no" title="function not covered" >as</span>ync (newName, newEmail, newPassword) =&gt; {
-  
-  const newUser = <span class="cstat-no" title="statement not covered" >{</span>
->>>>>>> Stashed changes
     email: newEmail,
     password: newPassword,
     name: newName
   };
-<<<<<<< Updated upstream
   const insert = `INSERT INTO account (userInfo) VALUES ($1) RETURNING *`
   const query = {
     text: insert,
@@ -225,17 +171,6 @@ exports.addUser = <span class="fstat-no" title="function not covered" >as</span>
   // console.log("here?");
   // console.log(rows[0]);
   return newUser;
-=======
-  const insert = <span class="cstat-no" title="statement not covered" >`INSERT INTO account (userInfo) VALUES ($1) RETURNING *`</span>
-  const query = <span class="cstat-no" title="statement not covered" >{</span>
-    text: insert,
-    values: [newUser],
-  };
-  const {rows} = <span class="cstat-no" title="statement not covered" >await pool.query(query);</span>
-  // console.log("here?");
-<span class="cstat-no" title="statement not covered" >  console.log(rows[0]);</span>
-<span class="cstat-no" title="statement not covered" >  return newUser;</span>
->>>>>>> Stashed changes
 };</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -243,11 +178,7 @@ exports.addUser = <span class="fstat-no" title="function not covered" >as</span>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-<<<<<<< Updated upstream
-                at Thu Dec 02 2021 20:22:38 GMT-0800 (Pacific Standard Time)
-=======
-                at Thu Dec 02 2021 19:20:35 GMT-0800 (Pacific Standard Time)
->>>>>>> Stashed changes
+                at Thu Dec 02 2021 22:48:57 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
