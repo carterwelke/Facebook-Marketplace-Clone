@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
+// password ecnryption: https://www.npmjs.com/package/bcrypt
 var bcrypt = require('bcrypt');
+const saltRounds = 10;
 const db = require('./db');
 
 const secrets = require('./userData/secrets.json');
@@ -21,13 +23,16 @@ exports.authenticate = async (req, res) => {
   }
 };
 
-/* exports.createUser = async (req, res) => {
-  console.log("test");
+exports.createUser = async (req, res) => {
+  const { name, email, password } = req.body;
+  console.log("Create user: ", name, email, password);
+  const hash = await bcrypt.hashSync(password, saltRounds);
+  const newUser = await db.addUser(name, email, hash);
+  console.log(newUser);
+  res.status(201).send(newUser);
+}
 
-  res.status(404).send('TESTING');
-} */
-
-/*exports.check = (req, res, next) => {
+/* exports.check = (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (authHeader) {
     const token = authHeader.split(' ')[1];

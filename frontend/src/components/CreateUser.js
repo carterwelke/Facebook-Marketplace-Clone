@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
-// import {useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
 
 
@@ -17,10 +17,10 @@ import {NavLink} from 'react-router-dom';
  * @return {object} JSX
  */
 function CreateUser() {
-  // const [user, setUser] = React.useState({email: '', password: ''});
-  // const history = useHistory();
+  const [user, setUser] = React.useState({name: '', email: '', password: ''});
+  const history = useHistory();
 
-  /* const handleInputChange = (event) => {
+  const handleInputChange = (event) => {
     const {value, name} = event.target;
     const u = user;
     u[name] = value;
@@ -28,7 +28,7 @@ function CreateUser() {
   };
 
   const onSubmit = (event) => {
-    /* event.preventDefault();
+    event.preventDefault();
     fetch('/createUser', {
       method: 'POST',
       body: JSON.stringify(user),
@@ -45,28 +45,35 @@ function CreateUser() {
       .then((json) => {
         console.log(json);
         localStorage.setItem('user', JSON.stringify(json));
-        history.push('/');
+        history.push('/login');
       })
       .catch((err) => {
         console.log(err);
         alert('Error signing up, please try again');
       });
-  }; */
+  };
 
   return (
-    <form /* onSubmit={onSubmit}*/>
+    <form onSubmit={onSubmit}>
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        onChange={handleInputChange}
+        required
+      />
       <input
         type="email"
         name="email"
         placeholder="Email"
-        // onChange={handleInputChange}
+        onChange={handleInputChange}
         required
       />
       <input
         type="password"
         name="password"
         placeholder="Password"
-        // onChange={handleInputChange}
+        onChange={handleInputChange}
         required
       />
       <input type="submit" value="Create"/>

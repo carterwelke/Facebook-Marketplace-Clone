@@ -52,7 +52,7 @@ function Login() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label='login page'>
       <input
         type="email"
         name="email"
