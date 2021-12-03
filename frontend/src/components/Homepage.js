@@ -83,9 +83,10 @@ function Homepage() {
       >
         <Box className={classes.box}
           sx={{
-            position: 'sticky',
-            p: 2,
-            m: 2,
+            'position': 'sticky',
+            'z-index': 1,
+            'p': 2,
+            'm': 2,
           }}
         >
           <AppBar
@@ -138,7 +139,7 @@ function Homepage() {
           'position': 'relative',
           'p': 2,
           'm': -2,
-          'z-index': '1',
+          'z-index': '0',
         }}
       >
         <Grid container spacing={1}>
