@@ -24,6 +24,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const fetchListings = (setListings, setError) => {
+  const item = localStorage.getItem('user');
+  if (!item) {
+    return;
+  }
+  const user = JSON.parse(item);
+  const bearerToken = user ? user.accessToken : '';
+  fetch('/getAllListings', {
+    method: 'get',
+    headers: new Headers({
+      'Authorization': `Bearer ${bearerToken}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw response;
+      }
+      return response.json();
+    })
+    .then((json) => {
+      setError('');
+      setListings(json);
+    })
+    .catch((error) => {
+      console.log(error);
+      setListings([]);
+      setError(`${error.status} - ${error.statusText}`);
+    });
+};
+
 /**
  * Simple component with no state.
  *
@@ -34,10 +65,22 @@ function Homepage() {
   const user = JSON.parse(localStorage.getItem('user'));
   const [name, setName] = React.useState(user ? user.name : '');
 
+  const [listings, setListings] = React.useState([]);
+  const [error, setError] = React.useState('Logged Out');
+
   const logout = () => {
     localStorage.removeItem('user');
+    setListings([]);
     setName('');
+    setError('Logged Out');
   };
+
+  React.useEffect(() => {
+    fetchListings(setListings, setError);
+  }, []);
+
+  // console.log(listings);
+  // console.log(error);
 
   return (
     <div>
@@ -128,9 +171,45 @@ function Homepage() {
             </div>
           </Grid>
         </Grid>
+        <Grid>
+          <Grid item
+            sx={{
+              border: 1,
+              borderRadius: '8px',
+            }}>
+            <div>{listings}</div>
+            <div>{error}</div>
+          </Grid>
+        </Grid>
       </Box>
     </div>
   );
 }
+
+/**
+ * <table id='Listings'>
+        <thead>
+          <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listings.map((listing) => (
+            <tr key={book.isbn} id={'isbn'+book.isbn}>
+              <td>{book.isbn}</td>
+              <td>{book.title}</td>
+              <td>{book.author}</td>
+              <td>{book.publisher}</td>
+            </tr>
+          ))}
+          <tr key={'error'}>
+            <td colSpan={4}>{error}</td>
+          </tr>
+        </tbody>
+      </table>
+ */
 
 export default Homepage;

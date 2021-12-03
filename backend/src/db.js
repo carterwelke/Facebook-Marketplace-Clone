@@ -37,3 +37,13 @@ exports.addUser = async (newName, newEmail, newPassword) => {
   // console.log(rows[0]);
   return newUser;
 };
+
+exports.getAllListings = async () => {
+  const select = `SELECT imageInfo FROM listing`;
+  const query = {
+    text: select,
+  };
+  const {rows} = await pool.query(query);
+  console.log(rows);
+  return rows;
+}
