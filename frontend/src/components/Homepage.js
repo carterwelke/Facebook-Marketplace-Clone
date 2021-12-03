@@ -24,26 +24,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const fetchListings = (setListings, setError) => {
+const fetchListings = (setListings) => {
   fetch('/getAllListings', {
     method: 'get',
   })
     .then((response) => {
-      if (!response.ok) {
+      /* if (!response.ok) {
         throw response;
-      }
+      }*/
       return response.json();
     })
     .then((json) => {
-      setError('');
+      // setError('');
       // console.log(json);
       setListings(json);
     })
-    .catch((error) => {
+    /* .catch((error) => {
       console.log(error);
       setListings([]);
       setError(`${error.status} - ${error.statusText}`);
-    });
+    }) */;
 };
 
 /**
@@ -59,17 +59,17 @@ function Homepage() {
   const [showList, setShowList] = React.useState('');
   const grabList = () => {
     setShowList('show listings');
-    fetchListings(setListings, setError);
+    fetchListings(setListings);
   };
 
   const [listings, setListings] = React.useState([]);
-  const [error, setError] = React.useState('Logged Out');
+  // const [error, setError] = React.useState('Logged Out');
 
   const logout = () => {
     localStorage.removeItem('user');
     setName('');
-    setError('Logged Out');
-    console.log(error);
+    // setError('Logged Out');
+    // console.log(error);
   };
   /*
   React.useEffect(() => {
@@ -183,12 +183,16 @@ function Homepage() {
           }}>
           <div>
             {showList ?
-              listings.map((listItem) => (
-                <tr key={listItem.imageinfo.imageUrl}>
-                  <td>{listItem.imageinfo.imageUrl}</td>
-                  <td>{listItem.imageinfo.description}</td>
-                </tr>
-              )) :
+              <table>
+                <thead>
+                  {listings.map((listItem) => (
+                    <tr key={listItem.imageinfo.imageUrl}>
+                      <td>{listItem.imageinfo.imageUrl}</td>
+                      <td>{listItem.imageinfo.description}</td>
+                    </tr>
+                  ))}
+                </thead>
+              </table> :
               <button
                 disabled={showList}
                 onClick={grabList}
