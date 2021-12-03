@@ -32,6 +32,8 @@ app.get('/v0/dummy', dummy.get);
 app.post('/authenticate', auth.authenticate);
 app.post('/createUser', auth.createUser);
 
+app.get('/getAllListings', listings.getAll);
+
 app.use((err, req, res, next) => {
   res.status(err.status).json({
     message: err.message,
