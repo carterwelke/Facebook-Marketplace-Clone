@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  photos: {
+    height: '200px',
+    width: '200px',
+  },
 }));
 
 const fetchListings = (setListings) => {
@@ -86,7 +90,7 @@ function Homepage() {
             'position': 'sticky',
             'z-index': 1,
             'p': 2,
-            'm': 2,
+            'm': 2.5,
           }}
         >
           <AppBar
@@ -103,7 +107,7 @@ function Homepage() {
               >
                 <Grid item>
                   <Typography variant="h6">
-                  Facebook
+                    Facebook
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -123,7 +127,7 @@ function Homepage() {
                       <NavLink
                         aria-label='login button'
                         to="/Login">
-                      Sign In
+                        Sign In
                       </NavLink>
                     </Button>
                   }
@@ -136,10 +140,11 @@ function Homepage() {
       <Box
         className={classes.box}
         sx={{
-          'position': 'relative',
+          'position': 'static',
           'p': 2,
           'm': -2,
           'z-index': '0',
+          'right': '-7px',
         }}
       >
         <Grid container spacing={1}>
@@ -155,32 +160,32 @@ function Homepage() {
           </Grid>
         </Grid>
       </Box>
-      <Box className={classes.box}
-        sx={{
-          position: 'relative',
-          left: '-55px',
-          p: 4,
-          m: 4,
-        }}
+      <Grid
       >
-        <Grid>
-          <Grid item
-            sx={{
-              border: 1,
-              borderRadius: '8px',
-            }}>
-            <div className={classes.search}>
-              <SearchIcon />
-              <InputBase placeholder=" Search" />
-            </div>
-          </Grid>
+        <Grid item
+          sx={{
+            position: 'static',
+            border: 1,
+            borderRadius: '8px',
+            p: -1,
+            m: 1,
+            left: '-5px',
+            down: '-5px',
+          }}>
+          <div className={classes.search}>
+            <SearchIcon />
+            <InputBase placeholder=" Search" />
+          </div>
         </Grid>
-      </Box>
+      </Grid>
       <Grid>
         <Grid item
           sx={{
-            border: 1,
-            borderRadius: '8px',
+            position: 'static',
+            p: 1,
+            m: 1,
+            left: '-5px',
+            down: '-5px',
           }}>
           <div>
             {showList ?
@@ -189,7 +194,7 @@ function Homepage() {
                   {listings.map((listItem) => (
                     <tr key={listItem.imageinfo.imageUrl}>
                       <td>
-                        <img
+                        <img className={classes.photos}
                           src={listItem.imageinfo.imageUrl}
                           alt={listItem.imageinfo.description}
                         />
@@ -203,7 +208,7 @@ function Homepage() {
                 disabled={showList}
                 onClick={grabList}
                 aria-label='grab listings'>
-                        Show Listings
+                Show Listings
               </button>
             }
           </div>
