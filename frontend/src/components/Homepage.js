@@ -64,6 +64,7 @@ const fetchListings = (setListings) => {
 };
 
 const searchListings = (setListings, search) => {
+  console.log('search');
   fetch('/getAllListings'+search, {
     method: 'get',
   })
@@ -217,6 +218,7 @@ function Homepage() {
           <div className={classes.search}>
             <SearchIcon/>
             <InputBase
+              id="searchb"
               placeholder=" Search"
               onChange={handleSearch}
               onKeyDown={getSearch}

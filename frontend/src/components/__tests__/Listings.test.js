@@ -3,6 +3,7 @@ import {
 } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 import {
   rest,
 } from 'msw';
@@ -15,6 +16,7 @@ import App from '../App';
 //  import {request} from '../../../../backend/src/app';
 
 const URL = '/getAllListings';
+const URL1 = '/getAllListings:search';
 
 const server = setupServer(
   rest.get(URL, (req, res, ctx) => {
@@ -30,6 +32,30 @@ const server = setupServer(
           imageinfo: {
             imageUrl: 'https://images.hgmsites.net/hug/mercedes-benz-s600-guard_100475149_h.jpg',
             description: 'Mercedes Benz S600 New Perfect Condition',
+          },
+        },
+      ],
+    ));
+  }),
+  rest.get(URL1, (req, res, ctx) => {
+    return res(ctx.json(
+      [
+        {
+          imageinfo: {
+            imageUrl: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+            description: 'BMW 435i Good Condition Used',
+          },
+        },
+        {
+          imageinfo: {
+            imageUrl: 'https://images.hgmsites.net/hug/mercedes-benz-s600-guard_100475149_h.jpg',
+            description: 'Mercedes Benz S600 New Perfect Condition',
+          },
+        },
+        {
+          imageinfo: {
+            imageUrl: 'https://media.ed.edmunds-media.com/toyota/rav4-hybrid/2019/oem/2019_toyota_rav4-hybrid_4dr-suv_limited_fq_oem_1_1600.jpg',
+            description: 'Toyota 2020 RAV4 Used Condition',
           },
         },
       ],
@@ -54,6 +80,24 @@ test('show listings', async () => {
   await waitFor(() => screen.getByText('BMW 435i Good Condition Used'));
 });
 
+test('show searched listings', async () => {
+  render(<App />);
+  fireEvent.click(screen.getByText('Show Listings'));
+  await waitFor(() =>
+    screen.getByText('Mercedes Benz S600 New Perfect Condition'));
+  userEvent.type(screen.getByPlaceholderText('Search'), 'Toyota');
+  const button = document.getElementById('searchb');
+  userEvent.type(button, '{enter}');
+  await waitFor(() => screen.getByText('Toyota 2020 RAV4 Used Condition'));
+});
+
+test('show searched listings', async () => {
+  render(<App />);
+  userEvent.type(screen.getByPlaceholderText('Search'), 'Toyota');
+  const button = document.getElementById('searchb');
+  userEvent.type(button, '{enter}');
+  await waitFor(() => screen.getByText('Show Listings'));
+});
 
 /**
   test('login', async () => {
