@@ -1,6 +1,11 @@
 import * as React from 'react';
 // import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+import {
+  Box, Button,
+} from '@mui/material';
+import {
+  makeStyles,
+} from '@material-ui/core/styles';
 // import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 // import Button from '@mui/material/Button';
@@ -10,6 +15,16 @@ import Box from '@mui/material/Box';
 import {
   useHistory, NavLink,
 } from 'react-router-dom';
+
+const useStyles = makeStyles((theme) => ({
+  linkText: {
+    fontWeight: 'bold',
+    color: 'white',
+    textDecoration: 'none',
+    textAlign: 'center',
+  },
+}));
+
 /**
  * Login authentication from authenticated books example
  *
@@ -81,14 +96,26 @@ function Login() {
  * @return {object} JSX
  */
 export default function LoginScreen() {
+  const classes = useStyles();
   return (
-    <Box sx={{flexGrow: 1}}>
-      <div><NavLink exact to="/home">Back</NavLink></div>
-      <div aria-label='login page'>Sign in here</div>
+    <Box>
+      <div aria-label='login page'
+      ><b>Sign in here</b></div>
       <Login />
-      <NavLink
-        aria-label='create account'
-        to="/new-user">Create Account</NavLink>
+      <Button variant='contained'>
+        <NavLink
+          aria-label='create account'
+          to="/new-user"
+          className={classes.linkText}
+        >Create Account</NavLink>
+      </Button>
+      <Button variant='contained'
+        sx={{
+          right: '-100px',
+        }}>
+        <NavLink exact to="/home" className={classes.linkText}
+        >Back</NavLink>
+      </Button>
     </Box>
   );
 }

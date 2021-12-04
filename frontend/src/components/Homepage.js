@@ -30,6 +30,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  linkText: {
+    fontWeight: 'bold',
+    color: 'white',
+    textDecoration: 'none',
+    textAlign: 'center',
+  },
+  linkTextCat: {
+    textDecoration: 'none',
+  },
 }));
 
 const fetchListings = (setListings) => {
@@ -129,6 +138,7 @@ function Homepage() {
                     </div> :
                     <Button variant="contained">
                       <NavLink
+                        className={classes.linkText}
                         aria-label='login button'
                         to="/Login">
                         Sign In
@@ -158,6 +168,7 @@ function Homepage() {
           <Grid item xs="auto">
             <Fab variant="extended">
               <NavLink
+                className={classes.linkTextCat}
                 aria-label='category button'
                 to="/Categories">All Categories</NavLink>
             </Fab>

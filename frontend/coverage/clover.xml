@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1638573802303" clover="3.2.0">
-  <project timestamp="1638573802303" name="All files">
+<coverage generated="1638591932173" clover="3.2.0">
+  <project timestamp="1638591932173" name="All files">
     <metrics statements="59" coveredstatements="59" conditionals="8" coveredconditionals="8" methods="28" coveredmethods="28" elements="95" coveredelements="95" complexity="0" loc="59" ncloc="59" packages="1" files="6" classes="6"/>
     <file name="App.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\App.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -43,41 +43,41 @@
     <file name="Homepage.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\Homepage.js">
       <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
       <line num="15" count="13" type="stmt"/>
-      <line num="27" count="4" type="stmt"/>
-      <line num="28" count="1" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="55" count="17" type="stmt"/>
-      <line num="56" count="17" type="stmt"/>
-      <line num="57" count="17" type="cond" truecount="2" falsecount="0"/>
-      <line num="59" count="17" type="stmt"/>
-      <line num="60" count="17" type="stmt"/>
-      <line num="61" count="1" type="stmt"/>
-      <line num="62" count="1" type="stmt"/>
-      <line num="65" count="17" type="stmt"/>
+      <line num="35" count="4" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="63" count="17" type="stmt"/>
+      <line num="64" count="17" type="stmt"/>
+      <line num="65" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="67" count="17" type="stmt"/>
       <line num="68" count="17" type="stmt"/>
-      <line num="69" count="2" type="stmt"/>
-      <line num="70" count="2" type="stmt"/>
-      <line num="80" count="17" type="stmt"/>
-      <line num="190" count="2" type="stmt"/>
+      <line num="69" count="1" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="73" count="17" type="stmt"/>
+      <line num="76" count="17" type="stmt"/>
+      <line num="77" count="2" type="stmt"/>
+      <line num="78" count="2" type="stmt"/>
+      <line num="88" count="17" type="stmt"/>
+      <line num="199" count="2" type="stmt"/>
     </file>
     <file name="Login.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\Login.js">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-      <line num="19" count="6" type="stmt"/>
-      <line num="20" count="6" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
       <line num="22" count="6" type="stmt"/>
-      <line num="23" count="50" type="stmt"/>
-      <line num="24" count="50" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
       <line num="25" count="50" type="stmt"/>
       <line num="26" count="50" type="stmt"/>
-      <line num="28" count="6" type="stmt"/>
-      <line num="29" count="2" type="stmt"/>
-      <line num="30" count="2" type="stmt"/>
-      <line num="41" count="1" type="stmt"/>
-      <line num="45" count="1" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
-      <line num="54" count="6" type="stmt"/>
-      <line num="84" count="6" type="stmt"/>
+      <line num="27" count="50" type="stmt"/>
+      <line num="28" count="50" type="stmt"/>
+      <line num="30" count="6" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="56" count="6" type="stmt"/>
+      <line num="86" count="6" type="stmt"/>
     </file>
   </project>
 </coverage>

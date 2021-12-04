@@ -23,7 +23,12 @@ beforeAll(() => {
         target: 'http://localhost:3010/',
         changeOrigin: true
       }))
-      .use(express.static(path.join(__dirname, '..', '..', 'frontend', 'build')))
+      .use('/static', express.static(
+        path.join(__dirname, '..', '..', 'frontend', 'build', 'static')))
+      .get('*', function (req, res) {
+        res.sendFile('index.html',
+          { root: path.join(__dirname, '..', '..', 'frontend', 'build') })
+      })
   );
   frontend.listen(3000, () => {
     console.log('Frontend Running at http://localhost:3000');

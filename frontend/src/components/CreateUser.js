@@ -1,6 +1,7 @@
 import * as React from 'react';
 // import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 // import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 // import Button from '@mui/material/Button';
@@ -11,6 +12,18 @@ import {
   useHistory, NavLink,
 } from 'react-router-dom';
 
+import {
+  makeStyles,
+} from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  linkText: {
+    fontWeight: 'bold',
+    color: 'white',
+    textDecoration: 'none',
+    textAlign: 'center',
+  },
+}));
 
 /**
  * Login authentication from authenticated books example
@@ -88,12 +101,16 @@ function CreateUser() {
  * @return {object} JSX
  */
 export default function CreateUserScreen() {
+  const classes = useStyles();
   return (
     <Box sx={{flexGrow: 1}}>
-      Create Account Here
+      <b>Create Account Here</b>
       <CreateUser />
-      <NavLink
-        exact to="/login">Back  </NavLink>
+      <Button variant='contained'>
+        <NavLink
+          exact to="/login"
+          className={classes.linkText}>Back  </NavLink>
+      </Button>
     </Box>
   );
 }

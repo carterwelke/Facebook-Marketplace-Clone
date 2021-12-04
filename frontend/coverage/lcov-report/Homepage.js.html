@@ -294,7 +294,23 @@
 <a name='L235'></a><a href='#L235'>235</a>
 <a name='L236'></a><a href='#L236'>236</a>
 <a name='L237'></a><a href='#L237'>237</a>
-<a name='L238'></a><a href='#L238'>238</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -309,6 +325,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -483,7 +507,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -555,6 +587,14 @@ const useStyles = makeStyles((theme) =&gt; ({
     display: 'flex',
     alignItems: 'center',
   },
+  photos: {
+    height: '200px',
+    width: '200px',
+  },
+  text: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 }));
 &nbsp;
 const fetchListings = (setListings) =&gt; {
@@ -619,7 +659,7 @@ function Homepage() {
             'position': 'sticky',
             'z-index': 1,
             'p': 2,
-            'm': 2,
+            'm': 2.5,
           }}
         &gt;
           &lt;AppBar
@@ -636,7 +676,7 @@ function Homepage() {
               &gt;
                 &lt;Grid item&gt;
                   &lt;Typography variant="h6"&gt;
-                  Facebook
+                    Facebook
                   &lt;/Typography&gt;
                 &lt;/Grid&gt;
                 &lt;Grid item&gt;
@@ -656,7 +696,7 @@ function Homepage() {
                       &lt;NavLink
                         aria-label='login button'
                         to="/Login"&gt;
-                      Sign In
+                        Sign In
                       &lt;/NavLink&gt;
                     &lt;/Button&gt;
                   }
@@ -669,10 +709,11 @@ function Homepage() {
       &lt;Box
         className={classes.box}
         sx={{
-          'position': 'relative',
+          'position': 'static',
           'p': 2,
-          'm': -2,
+          'm': -1,
           'z-index': '0',
+          'right': '-10px',
         }}
       &gt;
         &lt;Grid container spacing={1}&gt;
@@ -688,32 +729,32 @@ function Homepage() {
           &lt;/Grid&gt;
         &lt;/Grid&gt;
       &lt;/Box&gt;
-      &lt;Box className={classes.box}
-        sx={{
-          position: 'relative',
-          left: '-55px',
-          p: 4,
-          m: 4,
-        }}
+      &lt;Grid
       &gt;
-        &lt;Grid&gt;
-          &lt;Grid item
-            sx={{
-              border: 1,
-              borderRadius: '8px',
-            }}&gt;
-            &lt;div className={classes.search}&gt;
-              &lt;SearchIcon /&gt;
-              &lt;InputBase placeholder=" Search" /&gt;
-            &lt;/div&gt;
-          &lt;/Grid&gt;
+        &lt;Grid item
+          sx={{
+            position: 'static',
+            border: 1,
+            borderRadius: '8px',
+            p: -1,
+            m: 1,
+            left: '-5px',
+            down: '-5px',
+          }}&gt;
+          &lt;div className={classes.search}&gt;
+            &lt;SearchIcon /&gt;
+            &lt;InputBase placeholder=" Search" /&gt;
+          &lt;/div&gt;
         &lt;/Grid&gt;
-      &lt;/Box&gt;
+      &lt;/Grid&gt;
       &lt;Grid&gt;
         &lt;Grid item
           sx={{
-            border: 1,
-            borderRadius: '8px',
+            position: 'static',
+            p: 1,
+            m: 1,
+            left: '-5px',
+            down: '-5px',
           }}&gt;
           &lt;div&gt;
             {showList ?
@@ -721,8 +762,15 @@ function Homepage() {
                 &lt;thead&gt;
                   {listings.map((listItem) =&gt; (
                     &lt;tr key={listItem.imageinfo.imageUrl}&gt;
-                      &lt;td&gt;{listItem.imageinfo.imageUrl}&lt;/td&gt;
-                      &lt;td&gt;{listItem.imageinfo.description}&lt;/td&gt;
+                      &lt;td&gt;
+                        &lt;img className={classes.photos}
+                          src={listItem.imageinfo.imageUrl}
+                          alt={listItem.imageinfo.description}
+                        /&gt;
+                      &lt;/td&gt;
+                      &lt;td className={classes.text}&gt;
+                        {listItem.imageinfo.description}
+                      &lt;/td&gt;
                     &lt;/tr&gt;
                   ))}
                 &lt;/thead&gt;
@@ -731,7 +779,7 @@ function Homepage() {
                 disabled={showList}
                 onClick={grabList}
                 aria-label='grab listings'&gt;
-                        Show Listings
+                Show Listings
               &lt;/button&gt;
             }
           &lt;/div&gt;
@@ -775,7 +823,7 @@ export default Homepage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Dec 03 2021 15:23:22 GMT-0800 (Pacific Standard Time)
+                at Fri Dec 03 2021 20:25:32 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
