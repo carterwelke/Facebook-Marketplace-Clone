@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
     height: '200px',
     width: '200px',
   },
+  text: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 }));
 
 const fetchListings = (setListings) => {
@@ -142,9 +146,9 @@ function Homepage() {
         sx={{
           'position': 'static',
           'p': 2,
-          'm': -2,
+          'm': -1,
           'z-index': '0',
-          'right': '-7px',
+          'right': '-10px',
         }}
       >
         <Grid container spacing={1}>
@@ -199,7 +203,9 @@ function Homepage() {
                           alt={listItem.imageinfo.description}
                         />
                       </td>
-                      <td>{listItem.imageinfo.description}</td>
+                      <td className={classes.text}>
+                        {listItem.imageinfo.description}
+                      </td>
                     </tr>
                   ))}
                 </thead>
