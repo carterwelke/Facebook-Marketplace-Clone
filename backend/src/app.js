@@ -34,6 +34,7 @@ app.post('/authenticate', auth.authenticate);
 app.post('/createUser', auth.createUser);
 
 app.get('/getAllListings', list.getAll);
+app.get('/getAllListings:search', list.getSearch);
 
 app.use((err, req, res, next) => {
   res.status(err.status).json({

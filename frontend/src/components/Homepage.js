@@ -63,6 +63,20 @@ const fetchListings = (setListings) => {
     }) */;
 };
 
+const searchListings = (setListings, search) => {
+  fetch('/getAllListings'+search, {
+    method: 'get',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      // setError('');
+      // console.log(json);
+      setListings(json);
+    });
+};
+
 /**
  * Simple component with no state.
  *
@@ -72,12 +86,25 @@ function Homepage() {
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('user'));
   const [name, setName] = React.useState(user ? user.name : '');
-
+  const [search, setSearch] = React.useState('');
   const [showList, setShowList] = React.useState('');
   const grabList = () => {
     setShowList('show listings');
     fetchListings(setListings);
   };
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const getSearch = (event) => {
+    if (event.keyCode === 13) {
+      if (showList !== '') {
+        searchListings(setListings, search);
+      }
+    }
+  };
+
 
   const [listings, setListings] = React.useState([]);
   // const [error, setError] = React.useState('Logged Out');
@@ -188,8 +215,12 @@ function Homepage() {
             down: '-5px',
           }}>
           <div className={classes.search}>
-            <SearchIcon />
-            <InputBase placeholder=" Search" />
+            <SearchIcon/>
+            <InputBase
+              placeholder=" Search"
+              onChange={handleSearch}
+              onKeyDown={getSearch}
+            />
           </div>
         </Grid>
       </Grid>

@@ -47,3 +47,16 @@ exports.getAllListings = async () => {
   // console.log(rows);
   return rows;
 }
+
+exports.getBySearch = async (search) => {
+  // console.log(search);
+  const searchLike = '%'+search+'%';
+  const select = `SELECT imageInfo FROM listing WHERE LOWER(imageInfo->>'description') LIKE LOWER($1)`;
+  const query = {
+    text: select,
+    values: [searchLike]
+  };
+  const {rows} = await pool.query(query);
+  //console.log(rows[0]);
+  return rows;
+}

@@ -29,6 +29,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /getAllListings:
+    
 
 components:
   schemas:
