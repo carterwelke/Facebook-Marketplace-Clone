@@ -91,7 +91,7 @@ test('show searched listings', async () => {
   await waitFor(() => screen.getByText('Toyota 2020 RAV4 Used Condition'));
 });
 
-test('show searched listings', async () => {
+test('search before listings are shown', async () => {
   render(<App />);
   userEvent.type(screen.getByPlaceholderText('Search'), 'Toyota');
   const button = document.getElementById('searchb');
