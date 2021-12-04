@@ -74,6 +74,14 @@ test('Go to Category', async () => {
   await page.click('aria/category button');
 });
 
+test('Show Listings', async () => {
+  await page.goto('http://localhost:3000/');
+  let label = await page.$('aria/grab listings');
+  let cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('Show Listings');
+  await page.click('aria/grab listings');
+});
+
 test('Login test', async () => {
   await page.goto('http://localhost:3000/');
   let label = await page.$('aria/login button');
@@ -104,6 +112,17 @@ test('Create Account test', async () => {
   await page.type('#passwordcr', 'Tobi');
   label = await page.$('aria/createz account');
   await page.click('aria/createz account');
+});
+
+test('Search Test', async () => {
+  await page.goto('http://localhost:3000/');
+  let label = await page.$('aria/grab listings');
+  let cont = await (await label.getProperty('textContent')).jsonValue();
+  expect(cont).toBe('Show Listings');
+  await page.click('aria/grab listings');
+  await page.waitForSelector('#searchb');
+  await page.type('#searchb', 'Toyota');
+  await page.keyboard.press('Enter');
 });
 
 

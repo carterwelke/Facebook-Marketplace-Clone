@@ -64,8 +64,7 @@ const fetchListings = (setListings) => {
 };
 
 const searchListings = (setListings, search) => {
-  console.log('search');
-  fetch('/getAllListings'+search, {
+  fetch('/getAllListings' + search, {
     method: 'get',
   })
     .then((response) => {
@@ -216,7 +215,7 @@ function Homepage() {
             down: '-5px',
           }}>
           <div className={classes.search}>
-            <SearchIcon/>
+            <SearchIcon />
             <InputBase
               id="searchb"
               placeholder=" Search"
@@ -247,7 +246,9 @@ function Homepage() {
                           alt={listItem.imageinfo.description}
                         />
                       </td>
-                      <td className={classes.text}>
+                      <td
+                        className={classes.text}
+                        id='text check'>
                         {listItem.imageinfo.description}
                       </td>
                     </tr>
@@ -267,31 +268,5 @@ function Homepage() {
     </div>
   );
 }
-
-/**
- * <table id='Listings'>
-        <thead>
-          <tr>
-            <th>ISBN</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publisher</th>
-          </tr>
-        </thead>
-        <tbody>
-          {listings.map((listing) => (
-            <tr key={book.isbn} id={'isbn'+book.isbn}>
-              <td>{book.isbn}</td>
-              <td>{book.title}</td>
-              <td>{book.author}</td>
-              <td>{book.publisher}</td>
-            </tr>
-          ))}
-          <tr key={'error'}>
-            <td colSpan={4}>{error}</td>
-          </tr>
-        </tbody>
-      </table>
- */
 
 export default Homepage;
