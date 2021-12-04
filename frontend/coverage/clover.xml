@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1638591932173" clover="3.2.0">
-  <project timestamp="1638591932173" name="All files">
-    <metrics statements="59" coveredstatements="59" conditionals="8" coveredconditionals="8" methods="28" coveredmethods="28" elements="95" coveredelements="95" complexity="0" loc="59" ncloc="59" packages="1" files="6" classes="6"/>
-    <file name="App.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\App.js">
+<coverage generated="1638599448889" clover="3.2.0">
+  <project timestamp="1638599448890" name="All files">
+    <metrics statements="74" coveredstatements="67" conditionals="12" coveredconditionals="8" methods="35" coveredmethods="30" elements="121" coveredelements="105" complexity="0" loc="74" ncloc="74" packages="1" files="6" classes="6"/>
+    <file name="App.js" path="C:\Users\Carter\Desktop\cse183\asg8a\cse-183-final-project\frontend\src\components\App.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="20" count="9" type="stmt"/>
     </file>
-    <file name="Category.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\Category.js">
+    <file name="Category.js" path="C:\Users\Carter\Desktop\cse183\asg8a\cse-183-final-project\frontend\src\components\Category.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="30" count="1" type="stmt"/>
     </file>
-    <file name="CreateUser.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\CreateUser.js">
-      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-      <line num="21" count="3" type="stmt"/>
-      <line num="22" count="3" type="stmt"/>
-      <line num="24" count="3" type="stmt"/>
-      <line num="25" count="24" type="stmt"/>
-      <line num="26" count="24" type="stmt"/>
-      <line num="27" count="24" type="stmt"/>
-      <line num="28" count="24" type="stmt"/>
-      <line num="31" count="3" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
-      <line num="42" count="1" type="stmt"/>
+    <file name="CreateUser.js" path="C:\Users\Carter\Desktop\cse183\asg8a\cse-183-final-project\frontend\src\components\CreateUser.js">
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="34" count="3" type="stmt"/>
+      <line num="35" count="3" type="stmt"/>
+      <line num="37" count="3" type="stmt"/>
+      <line num="38" count="24" type="stmt"/>
+      <line num="39" count="24" type="stmt"/>
+      <line num="40" count="24" type="stmt"/>
+      <line num="41" count="24" type="stmt"/>
+      <line num="44" count="3" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
       <line num="46" count="1" type="stmt"/>
-      <line num="47" count="1" type="stmt"/>
-      <line num="51" count="3" type="stmt"/>
-      <line num="91" count="3" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="64" count="3" type="stmt"/>
+      <line num="104" count="3" type="stmt"/>
+      <line num="105" count="3" type="stmt"/>
     </file>
-    <file name="Dummy.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\Dummy.js">
+    <file name="Dummy.js" path="C:\Users\Carter\Desktop\cse183\asg8a\cse-183-final-project\frontend\src\components\Dummy.js">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
       <line num="10" count="2" type="stmt"/>
       <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
@@ -40,44 +42,57 @@
       <line num="32" count="4" type="stmt"/>
       <line num="39" count="2" type="stmt"/>
     </file>
-    <file name="Homepage.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\Homepage.js">
-      <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
+    <file name="Homepage.js" path="C:\Users\Carter\Desktop\cse183\asg8a\cse-183-final-project\frontend\src\components\Homepage.js">
+      <metrics statements="29" coveredstatements="22" conditionals="10" coveredconditionals="6" methods="13" coveredmethods="8"/>
       <line num="15" count="13" type="stmt"/>
-      <line num="35" count="4" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="43" count="1" type="stmt"/>
-      <line num="48" count="1" type="stmt"/>
-      <line num="63" count="17" type="stmt"/>
-      <line num="64" count="17" type="stmt"/>
-      <line num="65" count="17" type="cond" truecount="2" falsecount="0"/>
-      <line num="67" count="17" type="stmt"/>
-      <line num="68" count="17" type="stmt"/>
-      <line num="69" count="1" type="stmt"/>
-      <line num="70" count="1" type="stmt"/>
-      <line num="73" count="17" type="stmt"/>
-      <line num="76" count="17" type="stmt"/>
-      <line num="77" count="2" type="stmt"/>
-      <line num="78" count="2" type="stmt"/>
-      <line num="88" count="17" type="stmt"/>
-      <line num="199" count="2" type="stmt"/>
+      <line num="44" count="4" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="52" count="1" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="66" count="4" type="stmt"/>
+      <line num="67" count="0" type="stmt"/>
+      <line num="71" count="0" type="stmt"/>
+      <line num="76" count="0" type="stmt"/>
+      <line num="86" count="17" type="stmt"/>
+      <line num="87" count="17" type="stmt"/>
+      <line num="88" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="89" count="17" type="stmt"/>
+      <line num="90" count="17" type="stmt"/>
+      <line num="91" count="17" type="stmt"/>
+      <line num="92" count="1" type="stmt"/>
+      <line num="93" count="1" type="stmt"/>
+      <line num="96" count="17" type="stmt"/>
+      <line num="97" count="0" type="stmt"/>
+      <line num="100" count="17" type="stmt"/>
+      <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="103" count="0" type="stmt"/>
+      <line num="109" count="17" type="stmt"/>
+      <line num="112" count="17" type="stmt"/>
+      <line num="113" count="2" type="stmt"/>
+      <line num="114" count="2" type="stmt"/>
+      <line num="124" count="17" type="stmt"/>
+      <line num="241" count="2" type="stmt"/>
     </file>
-    <file name="Login.js" path="C:\Users\asus\Desktop\CSE 183\asgn8_real\cse-183-final-project\frontend\src\components\Login.js">
-      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-      <line num="21" count="6" type="stmt"/>
-      <line num="22" count="6" type="stmt"/>
-      <line num="24" count="6" type="stmt"/>
-      <line num="25" count="50" type="stmt"/>
-      <line num="26" count="50" type="stmt"/>
-      <line num="27" count="50" type="stmt"/>
-      <line num="28" count="50" type="stmt"/>
-      <line num="30" count="6" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="32" count="2" type="stmt"/>
-      <line num="43" count="1" type="stmt"/>
-      <line num="47" count="1" type="stmt"/>
-      <line num="48" count="1" type="stmt"/>
-      <line num="56" count="6" type="stmt"/>
-      <line num="86" count="6" type="stmt"/>
+    <file name="Login.js" path="C:\Users\Carter\Desktop\cse183\asg8a\cse-183-final-project\frontend\src\components\Login.js">
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="34" count="6" type="stmt"/>
+      <line num="35" count="6" type="stmt"/>
+      <line num="37" count="6" type="stmt"/>
+      <line num="38" count="50" type="stmt"/>
+      <line num="39" count="50" type="stmt"/>
+      <line num="40" count="50" type="stmt"/>
+      <line num="41" count="50" type="stmt"/>
+      <line num="43" count="6" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
+      <line num="45" count="2" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="69" count="6" type="stmt"/>
+      <line num="99" count="6" type="stmt"/>
+      <line num="100" count="6" type="stmt"/>
     </file>
   </project>
 </coverage>
