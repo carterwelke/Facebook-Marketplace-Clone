@@ -28,7 +28,7 @@ app.use(
   }),
 );
 
-// app.get('/v0/dummy', dummy.get);
+app.get('/v0/dummy', dummy.get);
 // Your routes go here
 app.post('/authenticate', auth.authenticate);
 app.post('/createUser', auth.createUser);

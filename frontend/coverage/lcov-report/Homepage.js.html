@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>30/30</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>29/29</span>
             </div>
         
             
@@ -329,32 +329,7 @@
 <a name='L270'></a><a href='#L270'>270</a>
 <a name='L271'></a><a href='#L271'>271</a>
 <a name='L272'></a><a href='#L272'>272</a>
-<a name='L273'></a><a href='#L273'>273</a>
-<a name='L274'></a><a href='#L274'>274</a>
-<a name='L275'></a><a href='#L275'>275</a>
-<a name='L276'></a><a href='#L276'>276</a>
-<a name='L277'></a><a href='#L277'>277</a>
-<a name='L278'></a><a href='#L278'>278</a>
-<a name='L279'></a><a href='#L279'>279</a>
-<a name='L280'></a><a href='#L280'>280</a>
-<a name='L281'></a><a href='#L281'>281</a>
-<a name='L282'></a><a href='#L282'>282</a>
-<a name='L283'></a><a href='#L283'>283</a>
-<a name='L284'></a><a href='#L284'>284</a>
-<a name='L285'></a><a href='#L285'>285</a>
-<a name='L286'></a><a href='#L286'>286</a>
-<a name='L287'></a><a href='#L287'>287</a>
-<a name='L288'></a><a href='#L288'>288</a>
-<a name='L289'></a><a href='#L289'>289</a>
-<a name='L290'></a><a href='#L290'>290</a>
-<a name='L291'></a><a href='#L291'>291</a>
-<a name='L292'></a><a href='#L292'>292</a>
-<a name='L293'></a><a href='#L293'>293</a>
-<a name='L294'></a><a href='#L294'>294</a>
-<a name='L295'></a><a href='#L295'>295</a>
-<a name='L296'></a><a href='#L296'>296</a>
-<a name='L297'></a><a href='#L297'>297</a>
-<a name='L298'></a><a href='#L298'>298</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L273'></a><a href='#L273'>273</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -420,7 +395,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -627,30 +601,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 //  import ReactDOM from 'react-dom';
 import {
@@ -717,8 +667,7 @@ const fetchListings = (setListings) =&gt; {
 };
 &nbsp;
 const searchListings = (setListings, search) =&gt; {
-  console.log('search');
-  fetch('/getAllListings'+search, {
+  fetch('/getAllListings' + search, {
     method: 'get',
   })
     .then((response) =&gt; {
@@ -869,7 +818,7 @@ function Homepage() {
             down: '-5px',
           }}&gt;
           &lt;div className={classes.search}&gt;
-            &lt;SearchIcon/&gt;
+            &lt;SearchIcon /&gt;
             &lt;InputBase
               id="searchb"
               placeholder=" Search"
@@ -900,7 +849,9 @@ function Homepage() {
                           alt={listItem.imageinfo.description}
                         /&gt;
                       &lt;/td&gt;
-                      &lt;td className={classes.text}&gt;
+                      &lt;td
+                        className={classes.text}
+                        id='text check'&gt;
                         {listItem.imageinfo.description}
                       &lt;/td&gt;
                     &lt;/tr&gt;
@@ -921,32 +872,6 @@ function Homepage() {
   );
 }
 &nbsp;
-/**
- * &lt;table id='Listings'&gt;
-        &lt;thead&gt;
-          &lt;tr&gt;
-            &lt;th&gt;ISBN&lt;/th&gt;
-            &lt;th&gt;Title&lt;/th&gt;
-            &lt;th&gt;Author&lt;/th&gt;
-            &lt;th&gt;Publisher&lt;/th&gt;
-          &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-          {listings.map((listing) =&gt; (
-            &lt;tr key={book.isbn} id={'isbn'+book.isbn}&gt;
-              &lt;td&gt;{book.isbn}&lt;/td&gt;
-              &lt;td&gt;{book.title}&lt;/td&gt;
-              &lt;td&gt;{book.author}&lt;/td&gt;
-              &lt;td&gt;{book.publisher}&lt;/td&gt;
-            &lt;/tr&gt;
-          ))}
-          &lt;tr key={'error'}&gt;
-            &lt;td colSpan={4}&gt;{error}&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
- */
-&nbsp;
 export default Homepage;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -955,7 +880,7 @@ export default Homepage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Dec 04 2021 14:33:38 GMT-0800 (Pacific Standard Time)
+                at Sat Dec 04 2021 16:52:00 GMT-0800 (Pacific Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
