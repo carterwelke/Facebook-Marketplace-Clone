@@ -5,13 +5,20 @@ Material-UI
 
 CSE183 Fall 2021
 
-Implemented Features
+Implemented Features:
+
 Login and Authentication
+
 Create Account
+
 View Listings
+
 Search Listings
+
 Sort Listings
 
-Unimplemented Features
+Unimplemented Features:
+
 Post Listing
+
 Comment on another Listing
